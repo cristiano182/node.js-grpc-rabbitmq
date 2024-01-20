@@ -1,3 +1,5 @@
+Sequence diagram services with MERMAID extension
+
 ```mermaid
 sequenceDiagram
     actor User
