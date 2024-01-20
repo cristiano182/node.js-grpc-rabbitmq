@@ -8,7 +8,7 @@ sequenceDiagram
     participant db_api_store_pgsql
     participant RabbitMQ
 
-    User  ->>+ api_gateway: Create register Usecase flow - http:post:request
+    User  ->>+ api_gateway: Create register Usecase flow - POST http://localhost:3000
     api_gateway     ->>+ RabbitMQ:     amqp: request
     api_store     ->>+ RabbitMQ:      amqp: response
     api_store      ->>+ db_api_store_pgsql: tls: request
@@ -24,7 +24,7 @@ sequenceDiagram
     participant db_api_store_pgsql
     participant RabbitMQ
 
-    User  ->>+ api_gateway: List registers Usecase flow - http:get:request
+    User  ->>+ api_gateway: List registers Usecase flow - GET http://localhost:3000
     api_gateway     ->>+ RabbitMQ:     amqp: request
     api_store     ->>+ RabbitMQ:      amqp: response
     api_store      ->>+ db_api_store_pgsql: tls: request
