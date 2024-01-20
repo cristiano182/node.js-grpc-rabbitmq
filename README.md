@@ -1,4 +1,4 @@
-Sequence diagram services with MERMAID extension
+Microservices sequence diagram, using the mermaid tool.
 
 ```mermaid
 sequenceDiagram
