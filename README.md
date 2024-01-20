@@ -1,5 +1,3 @@
-Para visualizar o diagrama instale a extensão https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid
-
 ```mermaid
 sequenceDiagram
     actor User
