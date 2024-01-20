@@ -8,7 +8,13 @@ sequenceDiagram
     participant db_api_store_pgsql
     participant RabbitMQ
 
-    User  ->>+ api_gateway: Init Create Register Flow
+    User  ->>+ api_gateway: Create register Usecase flow
+    api_gateway     ->>+ RabbitMQ:     amqp: request
+    api_store     ->>+ RabbitMQ:      amqp: response
+    api_store      ->>+ db_api_store_pgsql: tls: request
+
+
+    User  ->>+ api_gateway: List registers Usecase flow
     api_gateway     ->>+ RabbitMQ:     amqp: request
     api_store     ->>+ RabbitMQ:      amqp: response
     api_store      ->>+ db_api_store_pgsql: tls: request
