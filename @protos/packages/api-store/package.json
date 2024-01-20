@@ -1,0 +1,25 @@
+{
+  "name": "api-store",
+  "version": "0.1.0",
+  "description": "api-store protobuf representation",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf ./dist && mkdir ./dist && bash ../../gen.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.5.5",
+    "grpc-tools": "^1.11.2",
+    "grpc_tools_node_protoc_ts": "^5.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cristiano182/node.js-grpc-rabbitmq-kubernetes.git"
+  },
+  "files": [
+    "/dist"
+  ],
+  "gitHead": "c684b60f17ff5384732296bfe0654e9134ff115a"
+}

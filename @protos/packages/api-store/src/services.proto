@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "register.proto";
+
+
+service RegisterService {
+  rpc ListRegister(ListRegisterRequest) returns (ListRegisterResponse);
+}

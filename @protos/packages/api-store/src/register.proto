@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message Register {
+  string start = 1;
+  string end = 2;
+}
+
+message ListRegisterRequest {
+ optional string start = 1;
+ optional string end = 2;
+}
+
+message ListRegisterResponse {
+repeated Register registers = 1;
+}
