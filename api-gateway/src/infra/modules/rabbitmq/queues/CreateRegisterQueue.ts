@@ -1,6 +1,6 @@
 import QueueWithRetryStrategy from './interfaces/RetryStrategyQueue'
 
-export default class RegisterStatusQueue extends QueueWithRetryStrategy {
+export default class CreateRegisterQueue extends QueueWithRetryStrategy {
   constructor() {
     const exchange = 'company'
     const queueName = 'company.register.create'

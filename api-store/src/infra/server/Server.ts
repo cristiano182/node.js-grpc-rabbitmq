@@ -1,5 +1,4 @@
 import 'reflect-metadata'
-import HttpModule from '../modules/http/HttpModule'
 import IoC from './IoC'
 import TypeORMModule from '../modules/typeorm/TypeORMModule'
 import RabbitMQModule from '../modules/rabbitmq/RabbitMQModule'
@@ -8,7 +7,7 @@ import TYPES from '../common/types/Types'
 import Module from '../global/interfaces/IModule'
 
 const modules = async (ioc: IoC) => {
-  const list: Array<typeof Module> = [TypeORMModule, RabbitMQModule, HttpModule]
+  const list: Array<typeof Module> = [TypeORMModule, RabbitMQModule]
   for (const module of list) {
     const instance = await module.build(ioc.getContainer())
     await instance.start()

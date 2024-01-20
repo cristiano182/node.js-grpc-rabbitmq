@@ -7,6 +7,8 @@ const TYPES = {
   ConsumerRegister: Symbol.for('ConsumerRegister'),
 
 
+  //GRPC ACTIONS
+
   //REPOSITORIES
   RegisterRepository: Symbol.for('RegisterRepository'),
 
@@ -15,15 +17,7 @@ const TYPES = {
   MessageChannel: Symbol.for('MessageChannel'),
   Producer: Symbol.for('Producer'),
 
-  //CONTROLLERS
-  CreateRegisterController: Symbol.for('CreateRegisterController'),
-  ListRegisterController: Symbol.for('ListRegisterController'),
-
-
-
   //MODULES
-  Fastify: Symbol.for('Fastify'),
-  HttpModule: Symbol.for('HttpModule'),
   TypeORMConnection: Symbol.for('TypeORMConnection'),
 }
 
