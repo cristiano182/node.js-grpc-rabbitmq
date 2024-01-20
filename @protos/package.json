@@ -1,0 +1,24 @@
+{
+  "name": "protos",
+  "version": "1.1.0",
+  "description": "protos",
+  "scripts": {
+    "build": "lerna run build",
+    "bootstrap": "lerna bootstrap",
+    "version:stable": "lerna version --yes",
+    "publish:stable": "lerna publish from-git --yes",
+    "publish:canary": "lerna publish --canary --no-git-tag-version --no-push --yes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristiano182/node.js-grpc-rabbitmq-kubernetes.git"
+  },
+  "author": "grpc-protos",
+  "license": "ISC",
+  "homepage": "https://github.com/cristiano182/node.js-grpc-rabbitmq-kubernetes",
+  "devDependencies": {
+    "lerna": "^5.5.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.6.3"
+  }
+}

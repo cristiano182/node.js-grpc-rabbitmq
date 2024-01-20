@@ -1,0 +1,18 @@
+{
+  "packages": ["packages/*"],
+  "version": "independent",
+  "command": {
+    "bootstrap": {
+      "npmClientArgs": ["--no-package-lock"]
+    },
+    "publish": {
+      "npmClient": "npm",
+      "verifyAccess": false,
+      "ignoreChanges": ["**/package.json"]
+    },
+    "version": {
+      "allowBranch": "master",
+      "conventionalCommits": true
+    }
+  }
+}
