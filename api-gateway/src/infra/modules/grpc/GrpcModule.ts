@@ -21,14 +21,11 @@ export default class GrpcModule extends Module {
 
   async clients(): Promise<void> {
   const clients = await readFilesFromPath<any>([__dirname, 'clients/', '*', '*Client.(t|j)s'])
-//  const credential = grpc.credentials.createInsecure()
-//  console.log(credential)
-//  const credential = grpc.credentials.createInsecure()
-
+   const credential = grpc.credentials.createInsecure()
     for (const { file: client } of clients) {
     if (!client) continue
       const { instance, instanceName, host, name } = client
-   //  this.container.bind(Symbol.for(instanceName)).toConstantValue(new instance(host, credential))
+      this.container.bind(Symbol.for(instanceName)).toConstantValue(new instance(host, credential))
       this.container.bind(Symbol.for(name)).to(client)
     }
   }

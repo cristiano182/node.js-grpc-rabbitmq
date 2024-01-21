@@ -13,7 +13,7 @@ export default class RegisterRepository extends Repo<IRegister> implements IRegi
   }
 
   async search(params: IListRegister): Promise<IPagination<IRegister>> {
-    const { status = '', limit = 10, skip = 0 } = params
+    const { status = '', limit = 100, skip = 0 } = params
 
     const query: FindOptionsWhere<IListRegister> = {
       ...(status ? { status } : {}),

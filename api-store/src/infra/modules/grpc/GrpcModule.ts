@@ -5,7 +5,6 @@ import { RegisterServiceService } from '@protos/api-store'
 import { Container, injectable } from 'inversify'
 import RegisterService from './services/RegisterService'
 import SECRETS from "../../server/env"
-
 @injectable()
 export default class GrpcModule extends Module {
   server: Server
@@ -35,7 +34,7 @@ export default class GrpcModule extends Module {
   }
 
   start(): Promise<void> {
-    const connectionString =  `0.0.0.0:${SECRETS.GRPC_SERVER}`
+    const connectionString =  `127.0.0.1:${SECRETS.GRPC_SERVER}`
     this.server.bindAsync(connectionString, ServerCredentials.createInsecure(), this.callback)
     return {} as Promise<void>
   }

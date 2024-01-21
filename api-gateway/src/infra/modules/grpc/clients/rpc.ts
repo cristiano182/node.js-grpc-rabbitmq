@@ -1,8 +1,8 @@
-import grpc from '@grpc/grpc-js'
+import { Client } from '@grpc/grpc-js'
 
 
 export class Rpc {
-  static instance: typeof grpc.Client
+  static instance: typeof Client
   static instanceName: string
   static host: string
 }

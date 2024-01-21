@@ -8,7 +8,7 @@ import Module from '../global/interfaces/IModule'
 import GrpcModule from '@infra/modules/grpc/GrpcModule'
 
 const modules = async (ioc: IoC) => {
-  const list: Array<typeof Module> = [RabbitMQModule, HttpModule, GrpcModule]
+  const list: Array<typeof Module> = [GrpcModule, RabbitMQModule, HttpModule]
   for (const module of list) {
     const instance = await module.build(ioc.getContainer())
     await instance.start()

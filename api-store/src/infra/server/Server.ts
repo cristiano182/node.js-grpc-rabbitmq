@@ -5,9 +5,10 @@ import RabbitMQModule from '../modules/rabbitmq/RabbitMQModule'
 import { Container } from 'inversify'
 import TYPES from '../common/types/Types'
 import Module from '../global/interfaces/IModule'
+import GrpcModule from '@infra/modules/grpc/GrpcModule'
 
 const modules = async (ioc: IoC) => {
-  const list: Array<typeof Module> = [TypeORMModule, RabbitMQModule]
+  const list: Array<typeof Module> = [TypeORMModule, GrpcModule, RabbitMQModule]
   for (const module of list) {
     const instance = await module.build(ioc.getContainer())
     await instance.start()

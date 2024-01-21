@@ -13,11 +13,10 @@ export type IListRegisterUseCaseResponse = IPagination<IRegister>
 @injectable()
 export default class ListRegister implements IUseCase<IListRegisterUseCaseParams, IListRegisterUseCaseResponse> {
   constructor(
- //  @inject(TYPES.RegisterClient) private registerClient: RegisterClient
+    @inject(TYPES.RegisterClient) private registerClient: RegisterClient
     ) {}
 
   async execute(params: IListRegisterUseCaseParams): Promise<IListRegisterUseCaseResponse> {
-   // return this.registerClient.listRegister(params)
-  return {} as IListRegisterUseCaseResponse
-   }
+  return this.registerClient.listRegister(params)
+}
 }
