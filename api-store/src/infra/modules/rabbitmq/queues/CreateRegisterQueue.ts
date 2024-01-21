@@ -1,6 +1,6 @@
 import QueueWithRetryStrategy from './interfaces/RetryStrategyQueue'
 
-export default class RegisterStatusQueue extends QueueWithRetryStrategy {
+export default class CreateRegisterQueue extends QueueWithRetryStrategy {
   constructor() {
     const exchange = 'company'
     const queueName = 'company.register.create'
@@ -9,10 +9,6 @@ export default class RegisterStatusQueue extends QueueWithRetryStrategy {
         routingKey: 'company.register.create',
         exchange,
       },
-      // {
-      //   routingKey: 'hash.document.updated',
-      //   exchange,
-      // },
     ]
     const retryQueueMessageTTL = 1000 * 60 * 60
 

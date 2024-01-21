@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 import env from 'env-var'
 const SnakeNamingStrategy = require('typeorm-naming-strategies').SnakeNamingStrategy
 

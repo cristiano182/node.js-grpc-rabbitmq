@@ -1,11 +1,12 @@
-import amqplib, { Channel } from 'amqplib'
 import 'reflect-metadata'
+import amqplib, { Channel } from 'amqplib'
 import TYPES from '../../common/types/Types'
 import { Container, injectable } from 'inversify'
 import readFilesFromPath from '../../utils/path'
 import Producer from './Producer'
 import MessageChannel from './MessageChannel'
 import Module from '../../global/interfaces/IModule'
+import SECRETS from "../../server/env"
 
 @injectable()
 export default class RabbitMQModule extends Module {
@@ -24,7 +25,8 @@ export default class RabbitMQModule extends Module {
   }
 
   async configurations(): Promise<void> {
-    this.amqp = await amqplib.connect(`amqp://username:password@localhost:5672`)
+    const connectionString = `amqp://${SECRETS.RABBITMQ_USER}:${SECRETS.RABBITMQ_PASSWORD}@${SECRETS.RABBITMQ_HOST}:${SECRETS.RABBITMQ_PORT}`
+    this.amqp = await amqplib.connect(connectionString)
     const channel = await this.amqp.createChannel()
     await this.includeExchanges(channel)
     await this.includeQueues(channel)

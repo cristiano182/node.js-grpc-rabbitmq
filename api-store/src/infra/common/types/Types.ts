@@ -4,10 +4,11 @@ const TYPES = {
   // USECASES
   CreateRegister: Symbol.for('CreateRegister'),
   ListRegister: Symbol.for('ListRegister'),
-  ConsumerRegister: Symbol.for('ConsumerRegister'),
+  CreateRegisterConsumer: Symbol.for('CreateRegisterConsumer'),
 
 
-  //GRPC ACTIONS
+  //GRPC SERVICES
+  GRPCRegisterService: Symbol.for('GRPCRegisterService'),
 
   //REPOSITORIES
   RegisterRepository: Symbol.for('RegisterRepository'),

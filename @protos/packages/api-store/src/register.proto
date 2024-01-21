@@ -1,13 +1,16 @@
 syntax = "proto3";
 
 message Register {
-  string start = 1;
-  string end = 2;
+  string id = 1;
+  string start = 2;
+  string end = 3;
+  string status = 4;
 }
 
 message ListRegisterRequest {
  optional string start = 1;
  optional string end = 2;
+ optional string status = 3;
 }
 
 message ListRegisterResponse {

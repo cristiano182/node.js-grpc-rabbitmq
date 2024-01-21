@@ -3,4 +3,6 @@ import { RegisterStatus } from '../enum'
 
 export interface IListRegister extends IPaginationQuery {
   status?: RegisterStatus
+  start?: string
+  end?: string
 }

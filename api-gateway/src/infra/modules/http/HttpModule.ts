@@ -3,6 +3,7 @@ import Fastify, { FastifyInstance } from 'fastify'
 import { Container, injectable } from 'inversify'
 import readFilesFromPath from '../../utils/path'
 import Module from '../../global/interfaces/IModule'
+import SECRETS from "../../server/env"
 
 @injectable()
 export default class HttpModule extends Module {
@@ -16,7 +17,7 @@ export default class HttpModule extends Module {
 
   async start(): Promise<void> {
     try {
-      await this.fastify.listen({ port: 3000 })
+      await this.fastify.listen({ port: SECRETS.HTTP_PORT })
     } catch (err) {
       this.fastify.log.error(err)
       process.exit(1)

@@ -6,8 +6,7 @@ import { inject, injectable } from 'inversify'
 import { IController } from '../../../../common/interfaces/IController'
 import { MyRequest } from '../../../../common/interfaces/IHttpRequest'
 import { ListRegisterSchema } from './schemas/ListRegisterSchema'
-import { IListRegister } from '@domain/register'
-import ListRegister from '@usecases/register/ListRegister'
+import ListRegister, { IListRegisterUseCaseParams } from '@usecases/register/ListRegister'
 
 @injectable()
 export default class ListRegisterController implements IController {
@@ -19,7 +18,7 @@ export default class ListRegisterController implements IController {
     return httpInstance.get(
       '/',
       ListRegisterSchema,
-      async (request: MyRequest<unknown, unknown, IListRegister>, reply: FastifyReply) => {
+      async (request: MyRequest<unknown, unknown, IListRegisterUseCaseParams>, reply: FastifyReply) => {
         const query = request.query
         const companies = await this.listRegister.execute(query)
         reply.send(companies)

@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/cristiano182/open-punch-clock#readme",
   "dependencies": {
+    "@protos/api-store": "file:../@protos/packages/api-store/dist",
     "amqplib": "^0.10.3",
     "class-fixtures-factory": "^1.6.1",
     "crypto": "^1.0.1",

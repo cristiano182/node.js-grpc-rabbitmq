@@ -9,10 +9,9 @@ const TYPES = {
 
   //REPOSITORIES
 
-  // GRPC ACTIONS
-  ListRegisterAction: Symbol.for('ListRegisterAction'),
-
-
+  //GRPC CLIENTS
+  RegisterServiceClient: Symbol.for('RegisterServiceClient'),
+  RegisterClient: Symbol.for('RegisterClient'),
 
   //RABBITMQ
   MessageChannel: Symbol.for('MessageChannel'),
